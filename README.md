@@ -18,8 +18,8 @@ Percy's only tool is his laser-powered velvet rope. One perfectly straight line 
 
 But tonight, the club owner has lost their mind. The new rule, glowing in holographic letters above the door, makes Percy's circuits ache:
 
-> [!WARNING] Rules of the XOR Club
-> **You are welcome if you are wearing a cool hat OR slick glasses, but NOT BOTH.**
+"*You are **welcome if** you are wearing a cool hat **OR** slick glasses, but **NOT BOTH**.*"
+
 
 As the cyber-bass thumps from within, four guests approach under the flickering neon sign. Percy analyzes each one using his laser rope:
 
