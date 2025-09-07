@@ -51,7 +51,7 @@ Smoke began trailing from his logic circuits. The problem was **non-linear**, an
 
 Percy's optic dimmed. "I'm... not good enough?"
 
-"No, Percy. You're perfect at what you do. But some problems require a *partner*."
+"No, Percy. You're perfect at what you do. But some problems require a _partner_."
 
 ---
 
@@ -63,7 +63,7 @@ Ada led Percy to the club's back office, where another bot waited in the neon gl
 
 Percy's circuits hummed with confusion. "But I thought I was the bouncer?"
 
-"You still are," Ada smiled. "But now you're part of a *duo*. Percy, your job is simple: become the ultimate hat specialist and report to me. Larry, you become the glasses expert. That's it—just you two working together."
+"You still are," Ada smiled. "But now you're part of a _duo_. Percy, your job is simple: become the ultimate hat specialist and report to me. Larry, you become the glasses expert. That's it—just you two working together."
 
 She gestured to a holographic display showing the club's new system:
 
@@ -130,7 +130,7 @@ The display showed weighted connections—some thick and bright, others thin and
 Guest [No Hat, Glasses] flows through the duo:
 
 Percy's excitement: 0.2 → weighted by Ada's trust → 0.2 × 0.8 = 0.16
-Larry's excitement: 0.8 → weighted by Ada's trust → 0.8 × 0.7 = 0.56  
+Larry's excitement: 0.8 → weighted by Ada's trust → 0.8 × 0.7 = 0.56
 
 Ada's final consideration: 0.16 + 0.56 = 0.72
 After sigmoid activation: "Strong YES - let them in!"
@@ -191,7 +191,7 @@ Percy's hat-weight to Ada: 0.8 → 0.78 (slight decrease)
 Larry's glasses-weight to Ada: 0.7 → 0.68 (small adjustment)
 
 Larry's internal parameters:
-- Glasses-sensitivity: slightly decreased  
+- Glasses-sensitivity: slightly decreased
 - Hat-context-awareness: increased
 
 Percy's internal parameters:
@@ -201,7 +201,7 @@ Percy's internal parameters:
 
 "It's like..." Percy paused, processing. "Like each of us gets a personalized coaching session after every mistake?"
 
-"Precisely! And the beautiful part is, we don't just learn to avoid that specific mistake. We learn to recognize the *pattern* that caused the mistake. We become wiser."
+"Precisely! And the beautiful part is, we don't just learn to avoid that specific mistake. We learn to recognize the _pattern_ that caused the mistake. We become wiser."
 
 Percy's circuits hummed with something like excitement. "So every error makes the entire partnership smarter?"
 
@@ -220,7 +220,7 @@ Percy's optic tracked the training data floating in the air:
 ```
 Training Set:
 [No Hat, No Glasses] → Reject (0)
-[No Hat, Glasses] → Accept (1)  
+[No Hat, Glasses] → Accept (1)
 [Hat, No Glasses] → Accept (1)
 [Hat, Glasses] → Reject (0)
 ```
@@ -250,7 +250,7 @@ graph LR
     end
 
     style A fill:#ffdddd
-    style B fill:#ffe6dd  
+    style B fill:#ffe6dd
     style C fill:#fff2dd
     style D fill:#f2ffdd
     style E fill:#ddffdd
@@ -260,13 +260,13 @@ graph LR
 
 At first, Percy felt clumsy, uncertain. His hat-detection was either too sensitive or not sensitive enough. But slowly, through thousands of whispered corrections, he began to understand his role in the greater intelligence.
 
-He wasn't just detecting hats—he was learning to detect hats *in context*. His weights shifted, his biases adjusted, his entire perspective evolved.
+He wasn't just detecting hats—he was learning to detect hats _in context_. His weights shifted, his biases adjusted, his entire perspective evolved.
 
 Larry too was transforming, becoming more nuanced in his glasses assessment, learning to consider context rather than just presence of eyewear.
 
 **The Breakthrough Moment:**
 
-Around epoch 1500, something clicked. Percy felt it in his circuits—a moment of crystalline clarity. The duo wasn't just memorizing the four training examples. They were understanding the underlying *principle*.
+Around epoch 1500, something clicked. Percy felt it in his circuits—a moment of crystalline clarity. The duo wasn't just memorizing the four training examples. They were understanding the underlying _principle_.
 
 "I get it now," Percy announced during a brief break. "It's not about hats or glasses specifically. It's about... exclusivity. About things being different, not the same."
 
@@ -293,21 +293,25 @@ The XOR Club was packed. Word had spread through Neural City about the bouncer d
 Percy's optic gleamed as the first guests of the evening approached. The system that had once seemed impossible now felt like breathing:
 
 **Guest 1** [No Hat, No Glasses]:
+
 - Percy: "No hat... neutral feeling: 0.1"
-- Larry: "No glasses either... not exciting: 0.15"  
+- Larry: "No glasses either... not exciting: 0.15"
 - Ada's decision: 0.04 → "Sorry, not tonight!"
 
 **Guest 2** [No Hat, Glasses]:
+
 - Percy: "Still no hat, but that's okay with glasses present: 0.2"
 - Larry: "Excellent glasses! This feels right: 0.85"
 - Ada's decision: 0.96 → "Welcome to the XOR Club!"
 
 **Guest 3** [Hat, No Glasses]:
+
 - Percy: "Beautiful hat! This works: 0.88"
 - Larry: "No glasses, but the hat makes it work: 0.1"
 - Ada's decision: 0.94 → "Come on in!"
 
 **Guest 4** [Hat AND Glasses]:
+
 - Percy: "Nice hat, but something feels off with the combination: 0.7"
 - Larry: "Great glasses, but... this doesn't feel right: 0.6"
 - Ada's decision: 0.03 → "Sorry, too cool for this club!"
@@ -341,23 +345,35 @@ This saga is now yours to command, young apprentice. Percy's story is the story 
 To awaken your own network and walk in Percy's footsteps:
 
 1. **Install `uv`**: Your swift packaging companion
+
    ```bash
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
 2. **Create the Sacred Environment**:
+
    ```bash
    uv venv
    ```
 
-3. **Summon the NumPy Crystal**:
+3. **Summon the Essential Crystals**:
+
    ```bash
-   uv pip install numpy
+   # For Percy's NumPy adventure
+   uv add numpy
+
+   # For Percy's PyTorch journey (optional)
+   uv add torch
    ```
 
 4. **Unleash Percy's Code**:
+
    ```bash
-   .venv/bin/python neural_network.py
+   # The classic NumPy saga
+   uv run neural_network.py
+
+   # The modern PyTorch adventure
+   uv run neural_network_pytorch.py
    ```
 
 Watch as your own duo of digital neurons learns to dance together, solving the same puzzle that once seemed impossible to our chrome-plated hero.
@@ -366,4 +382,4 @@ Remember Percy's wisdom: Intelligence isn't about being the smartest individual.
 
 May your gradients descend smoothly, and may your loss functions find their way to zero.
 
-*The End... or rather, The Beginning.*
+_The End... or rather, The Beginning._
