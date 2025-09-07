@@ -18,8 +18,7 @@ Percy's only tool is his laser-powered velvet rope. One perfectly straight line 
 
 But tonight, the club owner has lost their mind. The new rule, glowing in holographic letters above the door, makes Percy's circuits ache:
 
-"*You are **welcome if** you are wearing a cool hat **OR** slick glasses, but **NOT BOTH**.*"
-
+"_You are **welcome if** you are wearing a cool hat **OR** slick glasses, but **NOT BOTH**._"
 
 As the cyber-bass thumps from within, four guests approach under the flickering neon sign. Percy analyzes each one using his laser rope:
 
@@ -51,6 +50,11 @@ Smoke began trailing from his logic circuits. The problem was **non-linear**, an
 Percy's optic dimmed. "I'm... not good enough?"
 
 "No, Percy. You're perfect at what you do. But some problems require a _partner_."
+
+### Decoding the Jargon: Chapter 1
+
+- **Percy**: In the world of AI, Percy represents a **Perceptron**—the simplest form of a neural network. It's a single neuron that takes inputs, applies a weight to them, and makes a binary decision. Think of his velvet rope as a **linear decision boundary**.
+- **The Impossible Problem**: The bouncer rule ("hat OR glasses, but NOT BOTH") is the classic **XOR problem**. It's famous in AI history because a single perceptron (like Percy) cannot solve it. The data points are not **linearly separable**, meaning you can't draw a single straight line to divide the "IN" crowd from the "OUT" crowd. This is why Percy's circuits were smoking!
 
 ## Chapter 2: The Perfect Partnership
 
@@ -94,6 +98,12 @@ Ada's eyes gleamed. "Because, Percy, you're not making the final decision anymor
 Percy felt something shift in his circuits—not confusion now, but curiosity. "So we're like... a thinking partnership?"
 
 "Exactly. A neural network, Percy. Two specialists working together to solve what neither could handle alone."
+
+### Decoding the Jargon: Chapter 2
+
+- **The Duo (Percy & Larry)**: This is the **Hidden Layer** of our neural network. It's a layer of neurons between the input and the output that does the heavy lifting. Neither Percy nor Larry makes the final decision; they just transform the input data into a more useful format.
+- **Ada**: She represents the **Output Neuron**. Her job is to take the signals from the hidden layer and produce the final result (let someone in or not).
+- **The Whole Team**: Percy, Larry, and Ada together form a **Multi-Layer Perceptron (MLP)**—a simple but powerful neural network capable of solving non-linear problems like XOR.
 
 ## Chapter 3: Percy Learns the Dance
 
@@ -147,6 +157,13 @@ For the first time all evening, Percy's servos relaxed. The impossible task wasn
 
 Ada's smile turned mysterious. "Ah, Percy. Now you're ready to learn about the whispers."
 
+### Decoding the Jargon: Chapter 3
+
+- **The Information Dance**: This entire process is called **Feedforward Propagation**. Information flows one way—from the inputs (guests), through the hidden layer (Percy & Larry), to the output (Ada).
+- **Excitement Level**: This is a neuron's **Activation**. It's a value (usually between 0 and 1) that represents how "fired up" a neuron is by a given input.
+- **Ada's Trust**: These are the **Weights** of the network. Each connection between neurons has a weight, which determines how much influence one neuron has on another. A high weight means strong influence.
+- **The Mathematical Magic**: The process of multiplying inputs by weights, summing them up, and then squashing the result through a function like **Sigmoid** is the core of how a neuron "thinks." The sigmoid function turns a raw number into a clean probability-like output (e.g., 0.96 for "Strong YES!").
+
 ## Chapter 4: The Whispers of Wisdom
 
 "The whispers?" Percy's optic focused intently on Ada.
@@ -199,6 +216,12 @@ Percy's internal parameters:
 Percy's circuits hummed with something like excitement. "So every error makes the entire partnership smarter?"
 
 "Every single one, Percy. That's the magic of gradient descent—we follow the whispers of our mistakes down the hill toward perfection."
+
+### Decoding the Jargon: Chapter 4
+
+- **The Backward Flow of Wisdom**: This is the legendary **Backpropagation** algorithm. It's the secret sauce of how neural networks learn. After making a prediction, the network calculates its error and sends that error signal backward through the network.
+- **The Whisper of Blame (Loss)**: The initial red signal at Ada's position is the **Loss** (or **Error**). It's a number that measures how wrong the network's prediction was. The goal of training is to make this number as small as possible.
+- **The Adjustment Ritual**: This process of using the error signal to update the weights is called **Gradient Descent**. Think of it as finding the bottom of a valley (minimum loss) by always taking a step in the steepest downward direction. Each "whisper" tells a weight exactly how to change (increase or decrease) to reduce the overall error.
 
 ## Chapter 5: The Training Montage
 
@@ -273,6 +296,12 @@ Percy looked at Larry with new respect. "We did it. We actually solved the impos
 
 "No, Percy," Ada said gently. "You became something greater than the sum of your parts. You became a learning partnership."
 
+### Decoding the Jargon: Chapter 5
+
+- **The Training Montage**: This is the **Training Loop**, the core process of machine learning. By repeatedly showing the network examples and letting it adjust itself via backpropagation, it gradually learns the underlying patterns in the data.
+- **Epoch**: The scoreboard shows "Epochs." One **Epoch** is one complete pass through the entire training dataset. Our network saw the four guest types 2,000 times to master the XOR pattern.
+- **Loss Scoreboard**: The graph shows the **Loss Function** value decreasing over time. This is the ultimate goal of training: to minimize the loss, which means the network's predictions are becoming more and more accurate.
+
 ## Chapter 6: Opening Night Triumph
 
 The XOR Club was packed. Word had spread through Neural City about the bouncer duo that could solve impossible problems. Percy stood at the entrance, no longer alone, no longer anxious.
@@ -324,6 +353,11 @@ Larry's sensors pulsed in agreement. "We became more than the sum of our parts."
 Percy's optic dimmed to a warm glow as he looked out at Neural City's twinkling lights. Somewhere out there, other impossible problems waited. Other partnerships of simple components were discovering they could become something extraordinary.
 
 And Percy? Percy was ready for whatever came next.
+
+### Decoding the Jargon: Chapter 6
+
+- **Opening Night**: This is what AI practitioners call **Inference** or **Prediction**. The training is over, the weights are locked in, and the network is now using what it learned to make decisions on new, unseen data (the real guests).
+- **Percy's Reflection**: Percy realizes he and Larry haven't just memorized the four training examples. They have **generalized** the solution. Their internal weights and biases now represent the abstract concept of XOR, allowing them to correctly classify any guest, even ones they haven't "seen" before. This ability to generalize is the true mark of a successful model.
 
 ## Your Journey Begins Now
 
