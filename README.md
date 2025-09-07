@@ -41,7 +41,7 @@ graph TD
     style G3 fill:#ddffdd,stroke:#66ff66,stroke-width:3px
 ```
 
-Percy's optic whirred desperately. He stretched his laser rope horizontally—but that put Guest 1 (not cool enough) in the same group as Guest 3 (perfectly cool). He tried vertically—same problem. Diagonally, in a curve, even in a zigzag. Nothing worked.
+Percy's optic whirred desperately. He stretched his laser rope horizontally—but that put Guest 1 (not cool enough) in the same group as Guest 3 (perfectly cool). He tried vertically—same problem. Diagonally? Nothing worked.
 
 Smoke began trailing from his logic circuits. The problem was **non-linear**, and his single straight line was powerless against it.
 
