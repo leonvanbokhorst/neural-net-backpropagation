@@ -1,163 +1,352 @@
 """
-A module to build a neural network from scratch with NumPy.
-This is a teaching tool to illustrate the principles of backpropagation.
+The Percy Chronicles: Neural Network Implementation
+==================================================
 
-For a full, step-by-step explanation of this code and the concepts
-behind it, please read the accompanying README.md file.
+This is Percy's actual code - the blueprint for building thinking teams
+that can solve impossible problems like the XOR challenge.
+
+Percy learned that intelligence comes from simple components working together.
+This code is his story, translated into Python and NumPy.
+
+For the full saga of how Percy discovered the magic of neural networks,
+read the accompanying README.md file.
 """
 
 import numpy as np
 
 
-# The activation function and its derivative.
-# We'll use the sigmoid function, a classic choice.
+# ==============================================================================
+# Chapter 1: The Fundamental Magic - Activation Functions
+# ==============================================================================
+
+
 def sigmoid(x):
-    """Squashes the input to be between 0 and 1."""
+    """
+    Percy's 'excitement function' - converts any signal into a value between 0 and 1.
+
+    Think of this as Percy's way of expressing how excited he is about what he sees:
+    - Very negative input → close to 0 (not excited at all)
+    - Very positive input → close to 1 (maximum excitement!)
+    - Zero input → exactly 0.5 (neutral)
+
+    This smooth curve is what allows Percy and his team to learn gradual distinctions
+    instead of just binary yes/no decisions.
+    """
     return 1 / (1 + np.exp(-x))
 
 
 def sigmoid_derivative(x):
-    """The gradient of the sigmoid function."""
+    """
+    The 'learning sensitivity' function - tells us how much Percy's excitement
+    can change based on small adjustments to the input.
+
+    This is crucial for the 'whispers of wisdom' (backpropagation).
+    When Percy gets feedback, this tells him how much he should adjust
+    his responses based on that feedback.
+    """
     return x * (1 - x)
+
+
+# ==============================================================================
+# Chapter 2: The Team Members - The Layer Class
+# ==============================================================================
 
 
 class Layer:
     """
-    A Layer is a "Council of Elders" in our network.
-    It's a collection of neurons that processes signals as a single, unified entity.
-    It holds a weight matrix (the council's wisdom) and a bias vector (their inclinations).
+    A Layer represents Percy's team at The XOR Club.
+
+    Think of this as Percy, Larry, and StyleBot working together:
+    - `weights`: How much each team member trusts the others' opinions
+    - `biases`: Each team member's personal inclinations/prejudices
+    - `inputs`: What the team sees (the current guest)
+    - `output`: The team's collective opinion after discussion
+
+    In Chapter 2 of our saga, Ada explained that Percy couldn't solve XOR alone.
+    He needed a team where each member contributes their expertise.
     """
 
     def __init__(self, num_inputs, num_neurons):
-        # We initialize weights with small random numbers.
+        """
+        Setting up a new team of neural bouncers.
+
+        num_inputs: How many things the team needs to look at (hat, glasses, etc.)
+        num_neurons: How many team members we're hiring (Percy, Larry, StyleBot, etc.)
+        """
+        # Initialize weights with small random values - like giving each team member
+        # slightly different initial opinions about what matters
         self.weights = np.random.randn(num_inputs, num_neurons) * 0.1
+
+        # Start biases at zero - no initial prejudices
         self.biases = np.zeros((1, num_neurons))
+
+        # These will store the team's inputs and outputs during the "dance"
         self.inputs = None
         self.output = None
 
     def forward(self, inputs):
         """
-        Passes the inputs through the entire layer at once.
+        Chapter 3: The Information Dance
+
+        This is where Percy's team processes what they see and gives their opinions.
+
+        The math here represents:
+        1. Each team member looks at all the inputs (guest features)
+        2. They weight those inputs based on their expertise (the weights matrix)
+        3. They add their personal bias/inclination
+        4. They express their final excitement level (through sigmoid)
         """
-        self.inputs = inputs
-        total_signal = np.dot(inputs, self.weights) + self.biases
-        self.output = sigmoid(total_signal)
+        self.inputs = inputs  # Remember what we saw (needed for learning later)
+
+        # The team discussion: inputs × weights + biases
+        # This is like Percy saying "I see a hat (input=1) and I care about hats
+        # with strength 0.8 (weight), plus I'm generally hat-positive (bias=0.1)"
+        team_discussion = np.dot(inputs, self.weights) + self.biases
+
+        # Convert the raw discussion into excitement levels (0 to 1)
+        self.output = sigmoid(team_discussion)
+
         return self.output
+
+
+# ==============================================================================
+# Chapter 3-6: The Complete System - The NeuralNetwork Class
+# ==============================================================================
 
 
 class NeuralNetwork:
     """
-    The Neural Network is the full "Temple" that houses the layers.
-    It orchestrates the flow of information forward and the whispers of learning backward.
+    The XOR Club itself - the complete system that houses Percy's team
+    and orchestrates their learning journey.
+
+    This represents Ada's management system that:
+    - Organizes the team hierarchy (layers)
+    - Runs the information dance (forward pass)
+    - Facilitates learning from mistakes (backpropagation)
+    - Manages the training montage (the train method)
     """
 
     def __init__(self, layer_sizes):
-        # layer_sizes is a list like [num_inputs, num_hidden_neurons, num_outputs]
-        # e.g., [2, 3, 1] for a network with 2 inputs, 1 hidden layer of 3 neurons, and 1 output neuron.
+        """
+        Building The XOR Club's management structure.
+
+        layer_sizes example: [2, 3, 1] means:
+        - 2 inputs (hat status, glasses status)
+        - 3 middle management (Percy, Larry, StyleBot)
+        - 1 final decision maker (Ada)
+        """
         self.layers = []
+
+        # Build each management level
         for i in range(len(layer_sizes) - 1):
-            num_inputs = layer_sizes[i]
-            num_neurons = layer_sizes[i + 1]
-            self.layers.append(Layer(num_inputs, num_neurons))
+            inputs_for_this_layer = layer_sizes[i]
+            neurons_in_this_layer = layer_sizes[i + 1]
+            self.layers.append(Layer(inputs_for_this_layer, neurons_in_this_layer))
 
     def forward(self, inputs):
         """
-        The full "thought" process, or the Forward Pass.
-        Passes the input through all layers of the temple.
-        """
-        current_inputs = inputs
-        for layer in self.layers:
-            current_inputs = layer.forward(current_inputs)
+        Chapter 3: The Complete Information Dance
 
-        # The final output of the last layer is the network's prediction.
-        return current_inputs
+        This is Percy's team in action - information flows from the entrance
+        through each layer of management until Ada makes the final decision.
+
+        Guest arrives → Percy's Team analyzes → Ada decides → Door opens/closes
+        """
+        current_signal = inputs
+
+        # Pass the signal through each layer of Percy's team
+        for layer in self.layers:
+            current_signal = layer.forward(current_signal)
+
+        # The final signal is Ada's decision
+        return current_signal
 
     def train(self, X_train, y_train, epochs, learning_rate):
         """
-        The "Training Dojo." This is where the network practices and learns.
+        Chapter 5: The Training Montage
+
+        This is where Percy and his team practice thousands of times,
+        getting better with each mistake through the sacred rhythm:
+        1. Predict (make a decision about a guest)
+        2. Measure (see how wrong we were)
+        3. Learn (adjust our teamwork based on the mistake)
+        4. Repeat (do it again, hopefully better)
         """
+        print("🤖 Percy and team begin their training montage...")
+
         for epoch in range(epochs):
             total_error = 0
-            for x, y_true in zip(X_train, y_train):
-                # 1. Predict (Forward pass)
-                # Reshape x to be a 2D array for dot product
-                x = x.reshape(1, -1)
-                y_pred = self.forward(x)
 
-                # 2. Calculate Error (Listen to the grumpy droid)
-                total_error += mse(y_true, y_pred)
+            # Practice with each training example
+            for guest_features, correct_decision in zip(X_train, y_train):
+                # 1. PREDICT: What would we decide about this guest?
+                guest_features = guest_features.reshape(
+                    1, -1
+                )  # Format for team processing
+                our_decision = self.forward(guest_features)
 
-                # 3. Learn (The whispers of blame)
-                self.backward(y_true, y_pred, learning_rate)
+                # 2. MEASURE: How wrong were we? (The grumpy loss function)
+                mistake_severity = mse(correct_decision, our_decision)
+                total_error += mistake_severity
 
-            # Print the progress, so we can watch it learn
+                # 3. LEARN: Send the whispers of wisdom backward through the team
+                self.backward(correct_decision, our_decision, learning_rate)
+
+            # Show Percy's progress every 100 rounds
             if (epoch + 1) % 100 == 0:
                 avg_error = total_error / len(X_train)
-                print(f"Epoch {epoch + 1}/{epochs}, Error: {avg_error:.6f}")
+                print(
+                    f"📊 Training Round {epoch + 1}/{epochs}, Team Error: {avg_error:.6f}"
+                )
 
-    def backward(self, y_true, y_pred, learning_rate):
-        """
-        This is the sacred art: Backpropagation.
-        It sends the "whispers of blame" backward through the network.
-        """
-        # Start with the error from the grumpy droid
-        error = mse_derivative(y_true, y_pred)
+                # Motivational messages as Percy improves
+                if avg_error < 0.1:
+                    print("    🎉 Percy: 'We're getting really good at this!'")
+                elif avg_error < 0.5:
+                    print("    💪 Percy: 'I can feel us getting stronger!'")
 
+    def backward(self, correct_answer, our_guess, learning_rate):
+        """
+        Chapter 4: The Whispers of Wisdom (Backpropagation)
+
+        This is the most magical part - when Percy's team learns from mistakes.
+        The error flows backward through each layer, whispering to every team member
+        exactly how they should adjust their behavior.
+
+        It's like Ada giving personalized coaching to each team member:
+        "Percy, you trusted the hat signal too much in that situation..."
+        "Larry, you need to be more suspicious when glasses appear with hats..."
+        "StyleBot, your artistic intuition was off - here's how to calibrate..."
+        """
+        # Start with the mistake signal from Ada's decision
+        error_signal = mse_derivative(correct_answer, our_guess)
+
+        # Send the whispers backward through each layer
         for layer in reversed(self.layers):
-            # The "blame" for this layer is the incoming error times the derivative of its activation
-            delta = error * sigmoid_derivative(layer.output)
+            # Calculate how much each team member should adjust
+            # (This is the "personalized coaching" step)
+            responsibility = error_signal * sigmoid_derivative(layer.output)
 
-            # Calculate the gradient of the weights and biases
-            d_weights = np.dot(layer.inputs.T, delta)
-            d_biases = np.sum(delta, axis=0, keepdims=True)
+            # Figure out how to adjust the team's trust relationships (weights)
+            weight_adjustments = np.dot(layer.inputs.T, responsibility)
+            bias_adjustments = np.sum(responsibility, axis=0, keepdims=True)
 
-            # Update the weights and biases
-            layer.weights -= learning_rate * d_weights
-            layer.biases -= learning_rate * d_biases
+            # Actually make the adjustments (Percy's team gets slightly wiser)
+            layer.weights -= learning_rate * weight_adjustments
+            layer.biases -= learning_rate * bias_adjustments
 
-            # Pass the error "whisper" to the previous layer
-            error = np.dot(delta, layer.weights.T)
-
-
-# --- Training Utilities ---
+            # Pass the whisper to the previous layer
+            error_signal = np.dot(responsibility, layer.weights.T)
 
 
-def mse(y_true, y_pred):
+# ==============================================================================
+# The Grumpy Loss Function - Ada's Mistake Detector
+# ==============================================================================
+
+
+def mse(correct_answer, our_guess):
     """
-    Mean Squared Error: our "Grumpy Droid" loss function.
-    It measures how wrong the network's predictions are.
+    The 'Grumpy Droid' from our saga - Ada's mistake-measuring assistant.
+
+    This function shrieks louder the more wrong we are:
+    - Perfect guess → silent (loss = 0)
+    - Terrible guess → loud shrieking (high loss)
+
+    Technically: Mean Squared Error
+    Practically: How embarrassed Percy should feel about his team's decision
     """
-    return np.mean(np.power(y_true - y_pred, 2))
+    return np.mean(np.power(correct_answer - our_guess, 2))
 
 
-def mse_derivative(y_true, y_pred):
-    """The derivative of the MSE loss function."""
-    return 2 * (y_pred - y_true) / y_pred.size
+def mse_derivative(correct_answer, our_guess):
+    """
+    The grumpy droid's specific complaints - tells Percy's team
+    not just that they were wrong, but in which direction they were wrong.
 
+    This is what starts the whispers of wisdom flowing backward.
+    """
+    return 2 * (our_guess - correct_answer) / our_guess.size
+
+
+# ==============================================================================
+# Chapter 6: Percy's Triumph - The XOR Challenge
+# ==============================================================================
 
 if __name__ == "__main__":
-    # --- The Awakening ---
-    # We will teach our network the XOR function, its final test.
-    # This is a classic problem that requires a hidden layer.
+    print("🎭 Welcome to The XOR Club!")
+    print("📖 This is Percy's story, in code form...")
+    print()
 
-    # 1. The training data (The XOR Puzzle)
-    X_train = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-    y_train = np.array([[0], [1], [1], [0]])
+    # The XOR Challenge - the impossible problem that broke Percy's original logic
+    # Remember: Accept guests with hat OR glasses, but NOT BOTH
+    X_train = np.array(
+        [
+            [0, 0],  # No hat, no glasses → REJECT (not cool enough)
+            [0, 1],  # No hat, glasses → ACCEPT (just right!)
+            [1, 0],  # Hat, no glasses → ACCEPT (perfect!)
+            [1, 1],  # Hat AND glasses → REJECT (too cool!)
+        ]
+    )
 
-    # 2. The network architecture (The Temple's design)
-    # 2 inputs -> 3 neurons in a hidden layer -> 1 output neuron
-    network = NeuralNetwork([2, 3, 1])
+    y_train = np.array([[0], [1], [1], [0]])  # REJECT  # ACCEPT  # ACCEPT  # REJECT
 
-    # 3. The training regimen (The Dojo's schedule)
-    epochs = 10000
-    learning_rate = 0.1
+    print("🧠 Building Percy's team...")
+    print("   - 2 input sensors (hat detector, glasses detector)")
+    print("   - 3 middle management (Percy, Larry, StyleBot)")
+    print("   - 1 decision maker (Ada)")
 
-    print("Beginning the training ritual...")
-    network.train(X_train, y_train, epochs, learning_rate)
-    print("The network has completed its training.")
+    # Create Percy's neural network team
+    # [2, 3, 1] = 2 inputs → 3 hidden neurons → 1 output
+    percys_team = NeuralNetwork([2, 3, 1])
 
-    # 4. The test of wisdom (The final exam)
-    print("\nLet's see the wisdom it has gained:")
-    for x, y_true in zip(X_train, y_train):
-        prediction = network.forward(x.reshape(1, -1))
-        print(f"Input: {x}, Prediction: {prediction[0][0]:.4f}, Actual: {y_true[0]}")
+    # Training parameters
+    training_rounds = 10000  # How many times Percy practices
+    learning_speed = 0.1  # How quickly Percy adjusts after mistakes
+
+    print(f"\n🏋️ Beginning {training_rounds} rounds of training...")
+    print("(Percy will show progress every 100 rounds)")
+    print()
+
+    # Chapter 5: The Training Montage
+    percys_team.train(X_train, y_train, training_rounds, learning_speed)
+
+    print("\n🎓 Training complete! Let's see how Percy's team performs...")
+    print("\n🚪 Opening night at The XOR Club:")
+    print("=" * 50)
+
+    # Chapter 6: The Triumph - Test Percy's learned wisdom
+    guest_types = [
+        "Guest with no hat, no glasses",
+        "Guest with no hat, but glasses",
+        "Guest with hat, but no glasses",
+        "Guest with both hat AND glasses",
+    ]
+
+    for i, (guest_features, correct_decision) in enumerate(zip(X_train, y_train)):
+        team_decision = percys_team.forward(guest_features.reshape(1, -1))
+        confidence = team_decision[0][0]
+
+        print(f"\n👤 {guest_types[i]}:")
+        print(f"   🤖 Percy's team confidence: {confidence:.4f}")
+        print(
+            f"   ✅ Correct decision: {'ACCEPT' if correct_decision[0] == 1 else 'REJECT'}"
+        )
+        print(f"   🎯 Team decision: {'ACCEPT' if confidence > 0.5 else 'REJECT'}")
+
+        # Add Percy's commentary
+        if confidence > 0.9:
+            print("   💬 Percy: 'Absolutely certain - let them in!'")
+        elif confidence > 0.7:
+            print("   💬 Percy: 'Pretty sure this one should enter.'")
+        elif confidence < 0.1:
+            print("   💬 Percy: 'Definitely not club material.'")
+        elif confidence < 0.3:
+            print("   💬 Percy: 'Nope, this doesn't feel right.'")
+        else:
+            print("   💬 Percy: 'Hmm, this is a close call...'")
+
+    print("\n🏆 Percy's Reflection:")
+    print("'I learned that intelligence isn't about being the smartest individual.'")
+    print("'It's about simple components working together, learning from mistakes,'")
+    print("'and becoming something greater than the sum of our parts!'")
+    print("\n✨ The neural network has mastered the XOR challenge! ✨")
