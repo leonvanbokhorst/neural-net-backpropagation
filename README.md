@@ -8,6 +8,8 @@ In this repository lies a single Python scroll, `neural_network.py`. It contains
 
 Our saga begins on a rain-slicked, neon-lit street, in front of the most exclusive establishment in Neural City: **The XOR Club**.
 
+Audio: [The XOR Club](xor-club.mp3)
+
 ![The XOR Club](xor-club.png)
 
 ## Chapter 1: Percy Faces the Impossible
