@@ -1,12 +1,12 @@
 # The Path of the Python Padawan: A Neural Network Saga
 
-![The XOR Club](xor-club.png)
-
 Welcome, young apprentice, to our secret AI-dojo. You have been chosen for a quest of profound importance: to build a thinking machine from scratch. Many see this as an impossible task, an art shrouded in the dark magic of impenetrable calculus. But you will learn the truth. It is not magic, but the Force—an elegant, logical flow of information that you will learn to command.
 
 In this repository lies a single Python scroll, `neural_network.py`. It is the blueprint for a mind. This document, your holocron, will be your guide on the path to understanding it. We will not just read the incantations; we will understand the story they tell.
 
 Our saga begins on a rain-slicked, neon-lit street, in front of the most exclusive establishment in the city: **The XOR Club**.
+
+![The XOR Club](xor-club.png)
 
 ---
 
