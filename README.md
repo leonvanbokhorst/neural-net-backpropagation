@@ -243,10 +243,10 @@ Percy watched their performance on the glowing scoreboard:
 ```mermaid
 graph LR
     subgraph "Training Progress"
-        A[Epoch 1<br/>Loss: 0.693<br/>Terrible] --> B[Epoch 100<br/>Loss: 0.423<br/>Getting Better]
-        B --> C[Epoch 500<br/>Loss: 0.198<br/>Much Better]
-        C --> D[Epoch 1000<br/>Loss: 0.089<br/>Almost There]
-        D --> E[Epoch 2000<br/>Loss: 0.034<br/>Excellent!]
+        A[Epoch 1<br/>Loss: 0.365<br/>Terrible]-->B[Epoch 500<br/>Loss: 0.270<br/>Getting better]
+        B --> C[Epoch 1000<br/>Loss: 0.240<br/>Ah, I think I got it!]
+        C --> D[Epoch 1500<br/>Loss: 0.022<br/>This is easy!]
+        D --> E[Epoch 2000<br/>Loss: 0.004<br/>Perfect!]
     end
 
     style A fill:#ffdddd
@@ -266,7 +266,7 @@ Larry too was transforming, becoming more nuanced in his glasses assessment, lea
 
 **The Breakthrough Moment:**
 
-Around epoch 1500, something clicked. Percy felt it in his circuits—a moment of crystalline clarity. The duo wasn't just memorizing the four training examples. They were understanding the underlying _principle_.
+Around epoch 1000, something clicked. Percy felt it in his circuits—a moment of crystalline clarity. The duo wasn't just memorizing the four training examples. They were understanding the underlying _principle_.
 
 "I get it now," Percy announced during a brief break. "It's not about hats or glasses specifically. It's about... exclusivity. About things being different, not the same."
 
