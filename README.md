@@ -75,7 +75,7 @@ class Layer:
 
 A single layer can learn simple patterns. But to learn complex ideas, we must stack these layers one after the other, forming a deep network. The `NeuralNetwork` class is the temple that houses these layers.
 
-````python
+```python
 class NeuralNetwork:
     def __init__(self, layer_sizes):
         self.layers = []
@@ -87,9 +87,10 @@ class NeuralNetwork:
         for layer in self.layers:
             current_inputs = layer.forward(current_inputs)
         return current_inputs
+```
+
 -   The `forward` method here orchestrates the entire flow of thought. It takes the initial input and passes it through the first layer. The output of that layer then becomes the input for the second layer, and so on, until a final prediction emerges from the last layer. This is the **Forward Pass**.
 
----
 
 ## Part 2: The Art of Learning
 
@@ -104,7 +105,7 @@ We use the Mean Squared Error (MSE), which you can imagine as a grumpy training 
 ```python
 def mse(y_true, y_pred):
     return np.mean(np.power(y_true - y_pred, 2))
-````
+```
 
 It takes the correct answer (`y_true`) and the network's prediction (`y_pred`), finds the difference, and squares it. Squaring makes the error positive and punishes large errors more severely. The goal of all our training is to make this grumpy droid happy by getting the loss score as close to zero as possible.
 
