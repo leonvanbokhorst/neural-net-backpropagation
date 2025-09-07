@@ -10,8 +10,6 @@ Our saga begins on a rain-slicked, neon-lit street, in front of the most exclusi
 
 ![The XOR Club](xor-club.png)
 
----
-
 ## Chapter 1: Percy Faces the Impossible
 
 Meet **Percy**. He's a bouncer at The XOR Club—chrome chassis gleaming under the neon lights, a single red optic that never blinks, and arms that could bend steel. But tonight, those powerful arms feel useless.
@@ -20,9 +18,10 @@ Percy's only tool is his laser-powered velvet rope. One perfectly straight line 
 
 But tonight, the club owner has lost their mind. The new rule, glowing in holographic letters above the door, makes Percy's circuits ache:
 
-> **"You are welcome if you are wearing a cool hat OR slick glasses, but NOT BOTH."**
+> [!WARNING] Rules of the XOR Club
+> **You are welcome if you are wearing a cool hat OR slick glasses, but NOT BOTH.**
 
-As the cyber-bass thumps from within, four guests approach under the flickering neon sign. Percy analyzes each one:
+As the cyber-bass thumps from within, four guests approach under the flickering neon sign. Percy analyzes each one using his laser rope:
 
 ```mermaid
 graph TD
@@ -52,8 +51,6 @@ Smoke began trailing from his logic circuits. The problem was **non-linear**, an
 Percy's optic dimmed. "I'm... not good enough?"
 
 "No, Percy. You're perfect at what you do. But some problems require a _partner_."
-
----
 
 ## Chapter 2: The Perfect Partnership
 
@@ -97,8 +94,6 @@ Ada's eyes gleamed. "Because, Percy, you're not making the final decision anymor
 Percy felt something shift in his circuits—not confusion now, but curiosity. "So we're like... a thinking partnership?"
 
 "Exactly. A neural network, Percy. Two specialists working together to solve what neither could handle alone."
-
----
 
 ## Chapter 3: Percy Learns the Dance
 
@@ -152,8 +147,6 @@ For the first time all evening, Percy's servos relaxed. The impossible task wasn
 
 Ada's smile turned mysterious. "Ah, Percy. Now you're ready to learn about the whispers."
 
----
-
 ## Chapter 4: The Whispers of Wisdom
 
 "The whispers?" Percy's optic focused intently on Ada.
@@ -206,8 +199,6 @@ Percy's internal parameters:
 Percy's circuits hummed with something like excitement. "So every error makes the entire partnership smarter?"
 
 "Every single one, Percy. That's the magic of gradient descent—we follow the whispers of our mistakes down the hill toward perfection."
-
----
 
 ## Chapter 5: The Training Montage
 
@@ -282,8 +273,6 @@ Percy looked at Larry with new respect. "We did it. We actually solved the impos
 
 "No, Percy," Ada said gently. "You became something greater than the sum of your parts. You became a learning partnership."
 
----
-
 ## Chapter 6: Opening Night Triumph
 
 The XOR Club was packed. Word had spread through Neural City about the bouncer duo that could solve impossible problems. Percy stood at the entrance, no longer alone, no longer anxious.
@@ -335,8 +324,6 @@ Larry's sensors pulsed in agreement. "We became more than the sum of our parts."
 Percy's optic dimmed to a warm glow as he looked out at Neural City's twinkling lights. Somewhere out there, other impossible problems waited. Other partnerships of simple components were discovering they could become something extraordinary.
 
 And Percy? Percy was ready for whatever came next.
-
----
 
 ## Your Journey Begins Now
 
