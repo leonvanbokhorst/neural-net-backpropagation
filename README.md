@@ -69,19 +69,19 @@ She gestured to a holographic display showing the club's layout:
 
 ```mermaid
 graph TD
-    subgraph "The New System"
-        subgraph "Input Layer - The Entrance"
+    subgraph "..."
+        subgraph "Input Layer (Entrance)"
             I1["Hat Status"]
             I2["Glasses Status"]
         end
 
-        subgraph "Hidden Layer - The Management Team"
+        subgraph "Hidden Layer (Team)"
             H1["Percy<br/>(Hat Specialist)"]
             H2["Larry<br/>(Glasses Expert)"]
             H3["StyleBot<br/>(Fashion Guru)"]
         end
 
-        subgraph "Output Layer - The Decision"
+        subgraph "Output Layer (Decision)"
             O1["Ada<br/>(Final Call)"]
         end
 
