@@ -38,6 +38,30 @@ Think of a `Layer` as a council of neuron-sages, a unified crystal that hums wit
 
 We then house these layers within the `NeuralNetwork`—the temple itself. The network orchestrates the flow of thought, passing a signal from one layer to the next in a grand cascade known as the **Forward Pass**.
 
+Our temple for the XOR quest has a simple, elegant design: 2 inputs, a hidden council of 3 neurons, and 1 final output neuron to declare the answer.
+
+```mermaid
+graph TD
+    subgraph "Input Layer"
+        I1["Input 1"]
+        I2["Input 2"]
+    end
+
+    subgraph "Hidden Layer (3 Neurons)"
+        H1["Neuron"]
+        H2["Neuron"]
+        H3["Neuron"]
+    end
+
+    subgraph "Output Layer (1 Neuron)"
+        O1["Output"]
+    end
+
+    I1 --> H1; I1 --> H2; I1 --> H3
+    I2 --> H1; I2 --> H2; I2 --> H3
+    H1 --> O1; H2 --> O1; H3 --> O1
+```
+
 ---
 
 ### Chapter 3: The Art of a Learning Mind
@@ -54,7 +78,33 @@ It learns through the sacred art of **Backpropagation**. This is the most mystic
 
 ### Chapter 4: The Dojo of Endless Practice
 
-With the ability to learn, our network must now be trained. We build a **Training Dojo**, the `train` method. Here, the network spars against the training data for thousands of rounds (`epochs`). In each round, it performs the sacred rhythm:
+With the ability to learn, our network must now be trained. We build a **Training Dojo**, the `train` method. Here, the network spars against the training data for thousands of rounds (`epochs`).
+
+The sacred rhythm of the dojo is a three-step dance: Predict, Critique, and Learn. This cycle repeats, endlessly honing the network's skill.
+
+```mermaid
+sequenceDiagram
+    participant Padawan as You
+    participant Network as Your Creation
+    participant LossDroid as Grumpy Droid
+
+    loop One Round of Sparring
+        Padawan->>Network: 1. Predict (Forward Pass)
+        activate Network
+        Network-->>Padawan: Returns Prediction
+        deactivate Network
+        Padawan->>LossDroid: 2. Critique (Calculate Loss)
+        activate LossDroid
+        LossDroid-->>Padawan: Shrieks Error!
+        deactivate LossDroid
+        Padawan->>Network: 3. Learn (Backward Pass)
+        activate Network
+        Note over Network: "Whispers of Blame"<br/>adjust internal wisdom
+        deactivate Network
+    end
+```
+
+In each round, it performs the sacred rhythm:
 
 1.  **Predict**: It faces an opponent (a data sample) and makes a prediction.
 2.  **Critique**: The grumpy droid shrieks out the loss.
